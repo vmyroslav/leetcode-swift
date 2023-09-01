@@ -19,7 +19,7 @@ final class TwoSumTests: XCTestCase {
     
     let solution = TwoSum()
 
-    func testExample() throws {
+    func testSolution() throws {
         let testCases: [TestCase] = [
             TestCase(nums: [2, 7, 11, 15], target: 9, expected: [0, 1]),
             TestCase(nums: [3, 2, 4], target: 6, expected: [1, 2]),
@@ -27,7 +27,7 @@ final class TwoSumTests: XCTestCase {
         ]
         
         for testCase in testCases {
-            XCTAssertEqual(solution.solution(testCase.nums, testCase.target), testCase.expected)
+            XCTAssertEqual(solution.solution(testCase.nums, testCase.target), testCase.expected, "Failed for nums: \(testCase.nums), target: \(testCase.target)")
         }
     }
 }

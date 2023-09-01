@@ -1,35 +1,43 @@
 //
-//  SumOfThreeTests.swift
-//  
+//  TwoSumTests.swift
 //
-//  Created by Myroslav Vivcharyk on 27.08.23.
+//
+//  Created by Myroslav Vivcharyk on 23.08.23.
 //
 
 import XCTest
+@testable import leetcode_swift
+
 
 final class SumOfThreeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    struct TestCase {
+        let input: [Int]
+        let target: Int
+        let expected: Bool
     }
+    
+    let solution = SumOfThreeValues()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testSolution() throws {
+        let testCases = [
+            TestCase(input: [3, 7, 1, 2, 8, 4, 5], target: 21, expected: false),
+            TestCase(input: [-1, 2, 1, -4, 5, -3], target: -8, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 18, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 32, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 33, expected: false),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 5, expected: false),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 6, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 18, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 32, expected: true),
+            TestCase(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15], target: 33, expected: false),
+            TestCase(input: [12, 3, 1, 2, -6, 5, -8, 6], target: 0, expected: true),
+            TestCase(input: [-2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9], target: 6, expected: true),
+        ]
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        for testCase in testCases {
+            let result = solution.naiveSolution(testCase.input, testCase.target)
+            XCTAssertEqual(result, testCase.expected, "Failed for input: \(testCase.input), target: \(testCase.target)")
         }
     }
-
 }

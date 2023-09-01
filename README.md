@@ -1,3 +1,5 @@
 # leetcode-swift
 
-A description of this package.
+This repository contains my solutions to the problems on [LeetCode](https://leetcode.com/problemset/all/) using Swift.
+
+
