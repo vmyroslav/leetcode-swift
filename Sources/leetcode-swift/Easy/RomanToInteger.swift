@@ -1,6 +1,5 @@
 /**
     Question Link: https://leetcode.com/problems/roman-to-integer/
-    Time Complexity: O(n), Space Complexity: O(1)
 
     Example 1:
         Input: s = "III"
@@ -19,6 +18,7 @@
  */
 
 class RomanToInteger {
+    // Time Complexity: O(n), Space Complexity: O(1)
     func solution(_ s: String) -> Int {
         var result = 0
         var previous: Int = 0

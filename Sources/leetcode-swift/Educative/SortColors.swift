@@ -1,5 +1,7 @@
 /**
-    Question Link: https://www.educative.io/courses/grokking-coding-interview-patterns-java/sum-of-three-values
+    Question Link: https://www.educative.io/courses/grokking-coding-interview-patterns-java/sort-colors
+
+
 
     Example 1:
         Input: nums = [3, 7, 1, 2, 8, 4, 5], target=21
@@ -11,7 +13,7 @@
 
  */
 
-class SumOfThreeValues {
+class SortColors {
     // Time Complexity: O(n^3), Space Complexity: O(1)
     func naiveSolution(_ nums: [Int], _ target: Int) -> Bool {
         for i in 0..<nums.count {

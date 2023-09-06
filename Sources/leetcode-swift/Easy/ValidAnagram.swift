@@ -1,6 +1,5 @@
 /**
     Question Link: https://leetcode.com/problems/valid-anagram/
-    Time Complexity: O(n), Space Complexity: O(1)
 
     Example 1:
         Input: s = "anagram", t = "nagaram"

@@ -1,6 +1,5 @@
 /**
     Question Link: https://leetcode.com/problems/two-sum/
-    Time Complexity: O(n), Space Complexity: O(n)
 
     Example 1:
         Input: nums = [2,7,11,15], target = 9
@@ -13,6 +12,7 @@
  */
 
 class TwoSum {
+    // Time Complexity: O(n), Space Complexity: O(n)
     func solution(_ nums: [Int], _ target: Int) -> [Int] {
         var dict = [Int:Int]()
 

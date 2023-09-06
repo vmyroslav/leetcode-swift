@@ -36,7 +36,9 @@ final class SumOfThreeTests: XCTestCase {
         ]
 
         for testCase in testCases {
-            let result = solution.naiveSolution(testCase.input, testCase.target)
+            let naiveResult = solution.naiveSolution(testCase.input, testCase.target)
+            let result = solution.solution(testCase.input, testCase.target)
+            XCTAssertEqual(naiveResult, testCase.expected, "Failed for algorithm naive, input: \(testCase.input), target: \(testCase.target)")
             XCTAssertEqual(result, testCase.expected, "Failed for input: \(testCase.input), target: \(testCase.target)")
         }
     }

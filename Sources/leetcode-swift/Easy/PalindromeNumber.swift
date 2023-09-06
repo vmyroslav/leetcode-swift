@@ -1,6 +1,5 @@
 /**
     Question Link: https://leetcode.com/problems/palindrome-number/
-    Time Complexity: O(n), Space Complexity: O(n)
 
     Example 1:
         Input: x = 121
@@ -50,6 +49,7 @@ class PalindromeNumber {
         return str == String(str.reversed())
     }
     
+    // Time Complexity: O(n), Space Complexity: O(1)
     func solutionDividing(_ x: Int) -> Bool {
         guard (x >= 0) else {
             return false

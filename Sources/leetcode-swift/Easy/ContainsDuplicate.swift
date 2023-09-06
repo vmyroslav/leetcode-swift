@@ -1,6 +1,5 @@
 /**
     Question Link: https://leetcode.com/problems/contains-duplicate/
-    Time Complexity: O(n), Space Complexity: O(n)
 
     Example 1:
         Input: nums = [1,2,3,1]
@@ -17,6 +16,7 @@
  */
 
 class ContainsDuplicate {
+    // Time Complexity: O(n), Space Complexity: O(n)
     func solution(_ nums: [Int]) -> Bool {
         guard (nums.count > 1) else {
             return false
