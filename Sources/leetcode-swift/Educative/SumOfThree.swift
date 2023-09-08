@@ -38,7 +38,6 @@ class SumOfThreeValues {
             low = i + 1
             high = arr.count - 1
             
-            
             while low < high {
                 sum = arr[i] + arr[low] + arr[high]
                 if sum == target { return true }
@@ -53,6 +52,5 @@ class SumOfThreeValues {
         }
         
         return false
-        
     }
 }
