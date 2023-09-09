@@ -2,62 +2,40 @@
     Question Link: https://leetcode.com/problems/valid-anagram/
 
     Example 1:
-        Input: s = "anagram", t = "nagaram"
+        Input: s = "A man, a plan, a canal: Panama"
         Output: true
+        Explanation: "amanaplanacanalpanama" is a palindrome.
     
     Example 2:
-        Input: s = "rat", t = "car"
+        Input: s = "race a car"
         Output: false
-
+        Explanation: "raceacar" is not a palindrome.
+ 
+    Example 3:
+        Input: s = " "
+        Output: true
+        Explanation: s is an empty string "" after removing non-alphanumeric characters.
+        Since an empty string reads the same forward and backward, it is a palindrome.
  */
 
 class ValidAnagram {
-    // Time Complexity: O(n), Space Complexity: O(k)
-    func solutionCompareDicts(_ s: String, _ t: String) -> Bool {
-        guard (s.count == t.count) else {
-            return false
+    // Time Complexity: O(n)), Space Complexity: O(n)
+    func solution(_ s: String) -> Bool {
+        let arr = Array(s.lowercased().filter({ $0.isLetter || $0.isNumber }))
+        
+        guard !arr.isEmpty else {
+            return true
         }
         
-        var mapS: [Character:Int] = [:]
-        var mapT: [Character:Int] = [:]
+        var left = 0
+        var right = arr.count - 1
         
-        for i in 0..<s.count {
-            let indexS = s.index(s.startIndex, offsetBy: i)
-            let indexT = t.index(t.startIndex, offsetBy: i)
-            
-            mapS[s[indexS], default: 0] += 1
-            mapT[t[indexT], default: 0] += 1
-        }
-        
-        return mapS == mapT
-    }
-    
-    // Time Complexity: O(n), Space Complexity: O(k)
-    func solution(_ s: String, _ t: String) -> Bool {
-        guard (s.count == t.count) else {
-            return false
-        }
-        
-        var map : [Character:Int] = [:]
-        
-        for char in s {
-            map[char, default: 0] += 1
-        }
-        
-        for char in t {
-            if let count = map[char], count > 0 {
-                map[char] = count - 1
-            } else {
-                return false
-            }
-            
+        while left <= right {
+            if arr[left] != arr[right] { return false }
+            left += 1
+            right -= 1
         }
         
         return true
-    }
-    
-    // Time Complexity: O(n*log(n)), Space Complexity: O(n)
-    func solutionSorted(_ s: String, _ t: String) -> Bool {
-        return s.sorted() == t.sorted()
     }
 }

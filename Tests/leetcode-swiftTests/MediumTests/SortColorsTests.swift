@@ -1,10 +1,3 @@
-//
-//  BestTimeToBuyStockTests.swift
-//
-//
-//  Created by Myroslav Vivcharyk on 08.09.23.
-//
-
 import XCTest
 @testable import leetcode_swift
 

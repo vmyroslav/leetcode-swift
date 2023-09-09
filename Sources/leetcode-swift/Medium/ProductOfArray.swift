@@ -15,6 +15,7 @@
 import Foundation
 
 class ProductOfArray {
+    // Time Complexity: O(n)), Space Complexity: O(n)
     func solution(_ nums: [Int]) -> [Int] {
         var result = Array(repeating: 1, count: nums.count)
         

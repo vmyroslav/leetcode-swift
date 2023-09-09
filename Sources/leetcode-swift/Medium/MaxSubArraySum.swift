@@ -17,12 +17,21 @@
         Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
  */
 
-class MaxSubArray {
+class MaxSubArraySum {
     func solution(_ nums: [Int]) -> Int {
         guard !nums.isEmpty else {
             return 0
         }
+        
+        var maxSum = Int.min
+        var currentSum = 0
+        
+        for num in nums {
+            currentSum = currentSum + num
+            if currentSum > maxSum { maxSum = currentSum }
+            if currentSum < 0 { currentSum = 0}
+        }
 
-        return 0
+        return maxSum
     }
 }
